@@ -16,7 +16,13 @@ const BmiCalculator = () => {
         setStatus('')
     }
 
-
+   
+        const handleKey=(e)=>{
+            if(e.key=='Enter'){
+                result()
+            }            
+        }
+    
 
     const result = () => {
 
@@ -67,12 +73,12 @@ const BmiCalculator = () => {
 
                     <div className="heightBox mt-2">
                         <label htmlFor="height">Height(cm)</label>
-                        <input value={height} onChange={(e) => { setHeight(e.target.value) }} type="number" name="height" id="height" />
+                        <input onKeyDown={handleKey} value={height} onChange={(e) => { setHeight(e.target.value) }} type="number" name="height" id="height" />
                     </div>
 
                     <div className="weightBox mt-3">
                         <label htmlFor="weight">Weight(kg)</label>
-                        <input value={weight} type="number" onChange={(e) => { setWeight(e.target.value) }} name="weight" id="weight" />
+                        <input onKeyDown={handleKey} value={weight} type="number" onChange={(e) => { setWeight(e.target.value) }} name="weight" id="weight" />
                     </div>
 
                     <div className="calculateButtonBox mt-4">
